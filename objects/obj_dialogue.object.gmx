@@ -32,6 +32,8 @@ key_assigned = vk_space;
 
 //Create the Message object
 instance_create(x, y, obj_message);
+instance_create(0,0, obj_controller_background);
+
 
 ///Dialogue internal functionality
 message_current = 0; //0 is the first number in our array, and the message we are currently at

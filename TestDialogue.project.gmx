@@ -6,12 +6,16 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background_example</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <objects name="DialogueSys">
       <object>objects\obj_dialogue</object>
       <object>objects\obj_message</object>
+      <object>objects\obj_controller_background</object>
+      <object>objects\obj_timer</object>
     </objects>
     <object>objects\mainExample</object>
   </objects>
