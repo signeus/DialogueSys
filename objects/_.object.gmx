@@ -115,14 +115,15 @@ size_font = 1;
 angle = 0;
 
 //Drawing the text at the coordinates
-color_black = c_black;
-rectangle = draw_rectangle_color(32, 620, 960, 704, color_black, color_black, color_black, color_black, false);
-rectangle.depth = -1;
 
+//draw_set_colour(c_white);
+//draw_text_transformed(x,y, message_draw, size_font, size_font, angle);
 color_white = c_white;
 text = draw_text_colour(x, y, message_draw, color_white, color_white, color_white, color_white, 1);
 
-
+//color_black = c_black;
+//rectangle = draw_rectangle_color(16, 620, 928, 704, color_black, color_black, color_black, color_black, false);
+//rectangle.depth = -5;
 </string>
           </argument>
         </arguments>

@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Creating the dialogue system
-instance_create(32,640, obj_dialogue);
+instance_create(48,640, obj_dialogue);
 </string>
           </argument>
         </arguments>
