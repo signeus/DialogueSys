@@ -5,7 +5,9 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\sprite0_character</sprite>
+  </sprites>
   <backgrounds name="background">
     <background>background\background_example</background>
   </backgrounds>
@@ -13,9 +15,9 @@
   <objects name="objects">
     <objects name="DialogueSys">
       <object>objects\obj_dialogue</object>
+      <object>objects\obj_portrait</object>
       <object>objects\obj_message</object>
       <object>objects\obj_controller_background</object>
-      <object>objects\obj_timer</object>
     </objects>
     <object>objects\mainExample</object>
   </objects>
