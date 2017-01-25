@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,7 +32,8 @@ key_assigned = vk_space;
 
 //Create the Message object
 instance_create(x, y, obj_message);
-instance_create(0,0, obj_controller_background);
+instance_create(50,630, obj_controller_background);
+instance_create(0,0, obj_title);
 
 
 ///Dialogue internal functionality
@@ -119,7 +120,7 @@ angle = 0;
 //Drawing the text at the coordinates
 color_black = c_black;
 rectangle = draw_rectangle_color(32, 620, 960, 704, color_black, color_black, color_black, color_black, false);
-rectangle.depth = -1;
+rectangle.depth = -50;
 
 color_white = c_white;
 text = draw_text_colour(x, y, message_draw, color_white, color_white, color_white, color_white, 1);

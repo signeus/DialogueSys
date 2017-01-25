@@ -12,6 +12,7 @@
   <paths name="paths"/>
   <objects name="objects">
     <objects name="DialogueSys">
+      <object>objects\obj_title</object>
       <object>objects\obj_dialogue</object>
       <object>objects\obj_message</object>
       <object>objects\obj_controller_background</object>
