@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -34,6 +34,7 @@ key_assigned = vk_space;
 instance_create(x, y, obj_message);
 instance_create(0,0, obj_controller_background);
 instance_create(0,0, obj_portrait);
+instance_create(0,0, obj_title);
 
 
 ///Dialogue internal functionality
