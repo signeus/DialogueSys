@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>3</depth>
+  <depth>40</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Name
+            <string>///Initialize variables
 name_draw = "Persefone";
-box_on = true;
+box_on = false;
 
 
 </string>
@@ -57,10 +57,12 @@ color = c_lime;
 
 if(box_on){
     color_black = c_gray;
-    rectangle = draw_rectangle_color(50, 600, 240, 630, color_black, color_black, color_black, color_black, false);
-    rectangle.depth = 1;
+    //rectangle = draw_rectangle_color(50, 600, 240, 630, color_black, color_black, color_black, color_black, false);
+    rectangle = draw_rectangle_color(50, 580, 240, 596, color_black, color_black, color_black, color_black, false);
+    rectangle.depth = 80;
 }
-draw_text_colour(64,608, name_draw, color, color, color, color, 1);
+text = draw_text_colour(60, 580, name_draw, color, color, color, color, 1);
+text.depth = 30;
 </string>
           </argument>
         </arguments>

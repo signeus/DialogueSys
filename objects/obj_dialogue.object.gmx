@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>5</depth>
+  <depth>90</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -120,11 +120,12 @@ angle = 0;
 
 //Drawing the text at the coordinates
 color_black = c_black;
-rectangle = draw_rectangle_color(24, 608, 960, 704, color_black, color_black, color_black, color_black, false);
-rectangle.depth = 90;
+rectangle = draw_rectangle_color(24, 576, 960, 736, color_black, color_black, color_black, color_black, false);
+rectangle.depth = 0.9;
 
 color_white = c_white;
-text = draw_text_colour(150, 640, message_draw, color_white, color_white, color_white, color_white, 1);
+text = draw_text_colour(180, 604, message_draw, color_white, color_white, color_white, color_white, 1);
+text.depth = 0.5;
 </string>
           </argument>
         </arguments>

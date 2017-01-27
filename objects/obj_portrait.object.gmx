@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>50</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -54,11 +54,11 @@ imageCharacter = sprite0_character;
 
 color_grey = $E9E9E9;
 rectangle = draw_rectangle_color(48, 600, 160, 712, color_grey, color_grey, color_grey, color_grey, false);
-rectangle.depth = 50;
+rectangle.depth = 0.8;
 
 
 image = draw_sprite_ext(imageCharacter, 0, 56, 608, 1, 1, 0, -1, 1);
-image.depth = 30
+image.depth = 0.5
 </string>
           </argument>
         </arguments>
