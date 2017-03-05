@@ -86,7 +86,8 @@ else { //if current character is more than the amount in the current message
             message_draw = ""; //clear the drawn text
         }
         else { //if our messages are done (we reach the max, in our case)...
-            instance_destroy(); //destroy the object
+            //instance_destroy(); //destroy the object
+            //TODO To decide if we want to destroy the "Box" or not
         }
     }
 }
@@ -124,25 +125,10 @@ color_black = c_black;
 rectangle = draw_rectangle_color(24, 576, 960, 736, color_black, color_black, color_black, color_black, false);
 rectangle.depth = 0.9;
 
-
-//show_message(string_length(message_draw));
-if(string_length(message_draw) &gt; 66){
-    otherText = string_copy(message_draw, caracteresMostrado, 66);
-    text = draw_text_colour(180, 604, otherText, color_white, color_white, color_white, color_white, 1);
-    //caracteresMostrado += 66;
-    if(string_length(message_draw) &gt;= 66){
-        segundoTexto = string_copy(message_draw, 66, 66);
-        sText = draw_text_colour(180, 632, segundoTexto, color_white, color_white, color_white, color_white, 1);
-    }
-    if(string_length(message_draw) &gt;= 132){
-        tercerTexto = string_copy(message_draw, 132, 66);
-        tText = draw_text_colour(180, 660, tercerTexto, color_white, color_white, color_white, color_white, 1);
-    }
-}else{
-    color_white = c_white;
-    text = draw_text_colour(180, 604, message_draw, color_white, color_white, color_white, color_white, 1);
-    text.depth = 0.5;
-}
+//Drawing text
+draw_set_colour(c_white);
+text = draw_text_ext(180,604,message_draw, 32, 780);
+text.depth = 0.5;
 
 </string>
           </argument>
