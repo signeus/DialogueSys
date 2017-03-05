@@ -30,8 +30,8 @@ max_of_messages = 3;
 time_of_message = 0.5;
 
 message[0] = "Esto es una prueba";
-message[1] = "Es super emocionante... ZzzZzzz... mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm";
-message[2] = "Es super emocionante... ZzzZzzz... ABC DEF GHI JKL MNOP QRST UVWZ Es super emocionante... ZzzZzzz... mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmollllllm";
+message[1] = "¡Con la de hierro que tiene!";
+message[2] = "Es super emocionante... ZzzZzzz... ABC DEF GHI JKL MNOP QRST UVWZ Es super emocionante... ZzzZzzz... ¿¡Qué guay es esta super palabra no crees!? Supercalifrasgiticoespialidoso";
 </string>
           </argument>
         </arguments>

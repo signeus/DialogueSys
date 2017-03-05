@@ -114,18 +114,12 @@ else { //if current character is more than the amount in the current message
           <argument>
             <kind>1</kind>
             <string>///Paint on screen
-
-//Variables
-size_font = 1;
-angle = 0;
-caracteresMostrado = 0
-
-//Drawing the text at the coordinates
+//Drawing the box at the coordinates
 color_black = c_black;
 rectangle = draw_rectangle_color(24, 576, 960, 736, color_black, color_black, color_black, color_black, false);
 rectangle.depth = 0.9;
 
-//Drawing text
+//Drawing the text
 draw_set_colour(c_white);
 text = draw_text_ext(180,604,message_draw, 32, 780);
 text.depth = 0.5;
