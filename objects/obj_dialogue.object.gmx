@@ -29,6 +29,7 @@
 
 //Variables
 key_assigned = vk_space;
+automatic_time_for_read = 3;
 
 //Create the Message object
 instance_create(x, y, obj_message);
@@ -44,7 +45,8 @@ message_draw = ""; //this is what we 'write' out. It's blank right now
 increase = obj_message.time_of_message; //the speed at which new characters are added
 characters = 0; //how many characters you gonna draw
 hold = 0; //if we hold 'Key assigned', the text will render faster
-
+automatic_writer = true; //If this is true, the messages will be writed without key_assigned
+initial_time = 0;
 //Find the obj_message and to show the messages...
 message_length = string_length(obj_message.message[message_current]); //get the number of characters in the first message
 </string>
@@ -72,13 +74,14 @@ message_length = string_length(obj_message.message[message_current]); //get the 
             <string>/// Deep functionality
 
 if (characters &lt; message_length) { //if current character count is less than the amount in current message* 
+    initial_time = 0;
     hold = keyboard_check(key_assigned); //hold is true or false if we hold 'Key Assigned' or not
     characters += increase * (1 + hold); //increase speed based on hold
     message_draw = string_copy(obj_message.message[message_current], 0, characters); //copy string to current character
 } 
 
 else { //if current character is more than the amount in the current message
-    if (keyboard_check_pressed(key_assigned)) { //if we press the Key Assigned...
+    if (keyboard_check_pressed(key_assigned) &amp;&amp; !automatic_writer) { //if we press the Key Assigned...
         if (message_current &lt; message_end) { //if there are more messages left to show (0 -&gt; max, in our case)
             message_current += 1; //increase the message by 1
             message_length = string_length(obj_message.message[message_current]);  //get the new character length for message
@@ -88,6 +91,25 @@ else { //if current character is more than the amount in the current message
         else { //if our messages are done (we reach the max, in our case)...
             //instance_destroy(); //destroy the object
             //TODO To decide if we want to destroy the "Box" or not
+        }
+    }    
+    else if (automatic_writer){
+        if (characters == message_length &amp;&amp; message_current != message_end){
+            if(initial_time &lt;= automatic_time_for_read*1000000){
+                initial_time += delta_time;
+            } else {
+                message_current += 1; //increase the message by 1 
+                message_length = string_length(obj_message.message[message_current]); //get the new character length for message
+                characters = 0; //set the characters back to 0
+                message_draw = ""; //clear the drawn text
+            }
+        }
+        if (message_current == message_end){ //if our messages are done (we reach the max, in our case)...
+            if(initial_time &lt;= automatic_time_for_read*1000000){ //este funciona
+                initial_time += delta_time;
+            } else {
+                instance_destroy(); //destroy the object (último mensaje)   
+            }   
         }
     }
 }
