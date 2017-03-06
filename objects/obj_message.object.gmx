@@ -34,6 +34,14 @@ message[1] = "¡Con la de hierro que tiene!";
 message[2] = "Es super emocionante... ZzzZzzz... ABC DEF GHI JKL MNOP QRST UVWZ Es super emocionante... ZzzZzzz... ¿¡Qué guay es esta super palabra no crees!? Supercalifrasgiticoespialidoso";
 message[3] = "meow";
 
+//Example:
+//  addCharacter(0,{"Persefone":[mensaje1,
+//                               mensaje2,
+//                               mensaje3,
+//                               mensaje4,
+//                               mensaje5,
+//                               ]})
+//  addUser("Persefone", image, "perse")
 </string>
           </argument>
         </arguments>
