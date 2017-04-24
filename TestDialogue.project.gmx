@@ -7,18 +7,32 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprite0_character</sprite>
+    <sprite>sprites\sprite1_character</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_example</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_add2Messages.gml</script>
+    <script>scripts\scr_add2Map.gml</script>
+    <script>scripts\scr_ClearMessages.gml</script>
+    <script>scripts\scr_add2Characters.gml</script>
+    <script>scripts\scr_CreateCharacters.gml</script>
+    <script>scripts\scr_CreateMessages.gml</script>
+    <script>scripts\scr_FindCharacter.gml</script>
+    <script>scripts\scr_FindDialog.gml</script>
+    <script>scripts\scr_FindInMap.gml</script>
+    <script>scripts\scr_ExecuteDialog.gml</script>
+  </scripts>
   <objects name="objects">
     <objects name="DialogueSys">
       <object>objects\obj_title</object>
       <object>objects\obj_dialogue</object>
       <object>objects\obj_portrait</object>
-      <object>objects\obj_message</object>
+      <object>objects\obj_manager_message</object>
       <object>objects\obj_controller_background</object>
+      <object>objects\obj_messages</object>
     </objects>
     <object>objects\mainExample</object>
   </objects>

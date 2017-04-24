@@ -32,23 +32,48 @@ key_assigned = vk_space;
 automatic_time_for_read = 3;
 
 //Create the Message object
-instance_create(x, y, obj_message);
+instance_create(x, y, obj_manager_message);
+instance_create(x, y, obj_messages);
 instance_create(0,0, obj_controller_background);
 instance_create(0,0, obj_portrait);
 instance_create(0,0, obj_title);
 
-
 ///Dialogue internal functionality
+messages = ds_map_create();
+charactersMap = ds_map_create();
+currentMessage = noone;
 message_current = 0; //0 is the first number in our array, and the message we are currently at
-message_end = obj_message.max_of_messages - 1; //the last number in our array
+message_end = obj_manager_message.max_of_messages - 1; //the last number in our array
 message_draw = ""; //this is what we 'write' out. It's blank right now
-increase = obj_message.time_of_message; //the speed at which new characters are added
+increase = obj_manager_message.time_of_message; //the speed at which new characters are added
 characters = 0; //how many characters you gonna draw
 hold = 0; //if we hold 'Key assigned', the text will render faster
 automatic_writer = true; //If this is true, the messages will be writed without key_assigned
 initial_time = 0;
 //Find the obj_message and to show the messages...
-message_length = string_length(obj_message.message[message_current]); //get the number of characters in the first message
+message_length = string_length(obj_manager_message.message[message_current]); //get the number of characters in the first message
+
+show_message("Creamos los dialogos");
+scr_CreateCharacters();
+scr_CreateMessages();
+//persefone = scr_FindCharacter("Persefone");
+//show_message(ds_map_find_value(persefone, "name"));
+
+//firstDialog = scr_FindDialog(1);
+
+//persefone = scr_FindCharacter(ds_map_find_value(firstDialog, "character"));
+//theMessages = ds_map_find_value(firstDialog, "messages");
+
+//for (i = 0; i &lt; ds_list_size(theMessages); i++)
+//{
+// show_message(ds_map_find_value(persefone, "name") + ": " + ds_list_find_value(theMessages, i));
+//}
+
+firstDialog = scr_FindDialog(1);
+scr_ExecuteDialog(firstDialog);
+
+secondDialog = scr_FindDialog(2);
+scr_ExecuteDialog(secondDialog);
 </string>
           </argument>
         </arguments>
@@ -77,14 +102,14 @@ if (characters &lt; message_length) { //if current character count is less than 
     initial_time = 0;
     hold = keyboard_check(key_assigned); //hold is true or false if we hold 'Key Assigned' or not
     characters += increase * (1 + hold); //increase speed based on hold
-    message_draw = string_copy(obj_message.message[message_current], 0, characters); //copy string to current character
+    message_draw = string_copy(obj_manager_message.message[message_current], 0, characters); //copy string to current character
 } 
 
 else { //if current character is more than the amount in the current message
     if (keyboard_check_pressed(key_assigned) &amp;&amp; !automatic_writer) { //if we press the Key Assigned...
         if (message_current &lt; message_end) { //if there are more messages left to show (0 -&gt; max, in our case)
             message_current += 1; //increase the message by 1
-            message_length = string_length(obj_message.message[message_current]);  //get the new character length for message
+            message_length = string_length(obj_manager_message.message[message_current]);  //get the new character length for message
             characters = 0; //set the characters back to 0
             message_draw = ""; //clear the drawn text
         }
@@ -99,7 +124,7 @@ else { //if current character is more than the amount in the current message
                 initial_time += delta_time;
             } else {
                 message_current += 1; //increase the message by 1 
-                message_length = string_length(obj_message.message[message_current]); //get the new character length for message
+                message_length = string_length(obj_manager_message.message[message_current]); //get the new character length for message
                 characters = 0; //set the characters back to 0
                 message_draw = ""; //clear the drawn text
             }

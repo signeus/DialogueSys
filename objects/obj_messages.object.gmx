@@ -25,23 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Messages to show
-max_of_messages = 4;
-time_of_message = 0.5;
+            <string>///Messages dictionaries
 
-message[0] = "Esto es una prueba";
-message[1] = "¡Con la de hierro que tiene!";
-message[2] = "Es super emocionante... ZzzZzzz... ABC DEF GHI JKL MNOP QRST UVWZ Es super emocionante... ZzzZzzz... ¿¡Qué guay es esta super palabra no crees!? Supercalifrasgiticoespialidoso";
-message[3] = "meow";
+messages = ds_map_create()
+ds_map_add(messages, "Persefone", "Esto es una prueba");
 
-//Example:
-//  addCharacter(0,{"Persefone":[mensaje1,
-//                               mensaje2,
-//                               mensaje3,
-//                               mensaje4,
-//                               mensaje5,
-//                               ]})
-//  addUser("Persefone", image, "perse")
+//arrayPersonajes = [
+//                    "Persefone", 
+//                    "Zeus", 
+//                    "Pepe", 
+//                    "Pepe"
+//                  ]
+//arrayMensajes = [
+//                   "Esto es una prueba", 
+//                    "Eso es imposible", 
+//                    "Vamos a hacerlo", 
+//                    "Ya esta"
+//                  ]
+
+//arrayPersonaje[1]
+//arrayMensajes[1]
+
+//{1, {"personaje":"Persefone","message":"Esto es un prueba"}}
+//{2, {"personaje":"Persefone","message":"Que piensas"}}
+//{3, {"personaje":"Zeus", "message":"No estoy pensando nada"}}
 </string>
           </argument>
         </arguments>
