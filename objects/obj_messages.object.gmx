@@ -31,7 +31,7 @@ messages = ds_map_create()
 ds_map_add(messages, "Persefone", "Esto es una prueba");
 
 //arrayPersonajes = [
-//                    "Persefone", 
+//                    "Persefone",  
 //                    "Zeus", 
 //                    "Pepe", 
 //                    "Pepe"
